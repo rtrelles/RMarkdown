@@ -1,0 +1,26 @@
+---
+title: "RMarkdown"
+author: "Raúl Trelles"
+date: "24/12/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+library(tidyverse)
+```
+
+## Explorando base de datos msleep
+
+```{r, echo=FALSE}
+data("msleep")
+msleep2 <- msleep %>% sample_frac(seze = 0.5)
+
+
+```
+
+```{r}
+msleep %>% group_by(conservation) %>% summarise(sleep = mean(sleep_total))
+```
+
+
